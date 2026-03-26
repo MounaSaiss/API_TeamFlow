@@ -10,7 +10,7 @@ class WorkspaceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'description' => 'nullable|string',
         ]);
         $workspace = Workspace::create([
@@ -18,7 +18,7 @@ class WorkspaceController extends Controller
             'description' => $request->description,
         ]);
         return response()->json([
-            'message' => 'Workspace created successfully',
+            'message' => 'Workspace crée avec succès',
             'workspace' => $workspace
         ]);
     }
@@ -26,7 +26,7 @@ class WorkspaceController extends Controller
     {
         $workspaces = Workspace::all();
         return response()->json([
-            'message' => 'Workspaces in Your Account récupérés avec succès',
+            'message' => 'Workspaces dans votre compte récupérés avec succès',
             'workspaces' => $workspaces
         ]);
     }
@@ -34,7 +34,7 @@ class WorkspaceController extends Controller
     {
         $workspace = Workspace::findOrFail($id);
         return response()->json([
-            'message' => 'Workspace details retrieved successfully',
+            'message' => 'les details du workspace récupérés avec succès',
             'workspace' => $workspace
         ]);
     }
@@ -42,7 +42,7 @@ class WorkspaceController extends Controller
     {
         $workspace = Workspace::findOrFail($id);
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'description' => 'nullable|string',
         ]);
         $workspace->update([
@@ -50,7 +50,7 @@ class WorkspaceController extends Controller
             'description' => $request->description,
         ]);
         return response()->json([
-            'message' => 'Workspace updated successfully',
+            'message' => 'Workspace updated avec succès',
             'workspace' => $workspace
         ]);
     }
@@ -59,7 +59,7 @@ class WorkspaceController extends Controller
         $workspace = Workspace::findOrFail($id);
         $workspace->delete();
         return response()->json([
-            'message' => 'Workspace deleted successfully'
+            'message' => 'Workspace deleted avec succès',
         ]);
     }
 }

@@ -14,9 +14,9 @@ class AuthenticationController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
             'email' => 'required|email|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'password' => 'required|confirmed|min:10',
         ]);
         
         $user = User::create([
@@ -26,7 +26,7 @@ class AuthenticationController extends Controller
         ]);
 
         return response()->json([
-            'message' => 'User created successfully',
+            'message' => 'User created ',
             'user' => $user
         ]);
     }
@@ -34,15 +34,15 @@ class AuthenticationController extends Controller
     {
         $request->validate([
             'email' => 'required|string|email',
-            'password' => 'required|string',
+            'password' => 'required',
         ]);
 
         $credentials = $request->only('email', 'password');
 
         if (!Auth::attempt($credentials)) {
             return response()->json([
-                'message' => 'Invalid login details'
-            ], 401);
+                'message' => 'Invalid email or password',
+            ]);
         }
 
         $user = User::where('email', $request->email)->firstOrFail();

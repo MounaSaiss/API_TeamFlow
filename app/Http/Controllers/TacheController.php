@@ -10,7 +10,7 @@ class TacheController extends Controller
     public function store(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'titre' => 'required|string|max:255',
+            'titre' => 'required|string',
             'priorité' => 'required|integer',
             'deadline' => 'required|date',
             'responsable_id' => 'required|integer',
@@ -23,7 +23,7 @@ class TacheController extends Controller
             'responsable_id' => $validatedData['responsable_id'],
         ]);
         return response()->json([
-            'message' => 'Tache created successfully',
+            'message' => 'Tâche crée avec succès',
             'tache' => $tache
         ]);
     }

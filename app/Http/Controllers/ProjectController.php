@@ -11,7 +11,7 @@ class ProjectController extends Controller
     public function store(Request $request, $workspaceId)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required|string',
         ]);
         $project = Project::create([
             'name' => $request->name,
@@ -37,11 +37,11 @@ class ProjectController extends Controller
         if ($project->user_id === Auth::id()) {
             $project->delete();
             return response()->json([
-                'message' => 'Project deleted successfully',
+                'message' => 'Project deleted avec succès',
             ]);
         } else {
             return response()->json([
-                'message' => 'Unauthorized',
+                'message' => 'Non autorisé à supprimer ce projet',
                 ]);
         }
     }
