@@ -21,6 +21,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
 //Projects 
-Route::post('/workspaces/{id}/projects',[ProjectController::class,'store']);
-Route::get('/projects/{id}',[ProjectController::class,'show']);
-Route::delete('/projects/{id}',[ProjectController::class,'destroy']);
+Route::middleware('auth:sanctum')->group(function () { 
+    Route::post('/workspaces/{id}/projects',[ProjectController::class,'store']);
+    Route::get('/projects/{id}',[ProjectController::class,'show']);
+    Route::delete('/projects/{id}',[ProjectController::class,'destroy']);
+});
