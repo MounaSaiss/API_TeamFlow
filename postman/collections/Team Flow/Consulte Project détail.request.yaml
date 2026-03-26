@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{base_url}}/projects/1"
+method: GET
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+examples: ./.resources/Consulte Project détail.resources/examples
+order: 11000

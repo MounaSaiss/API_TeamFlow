@@ -1,0 +1,25 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/projects/1"
+  method: DELETE
+  headers:
+    Accept: application/json
+    Authorization: Bearer {{token}}
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Host: 127.0.0.1:8000
+    Connection: close
+    X-Powered-By: PHP/8.2.29
+    Cache-Control: no-cache, private
+    Date: Thu, 26 Mar 2026 11:20:09 GMT
+    Content-Type: application/json
+    Access-Control-Allow-Origin: "*"
+  body:
+    type: text
+    content: |-
+      {
+          "message": "Project deleted successfully"
+      }
+order: 1000

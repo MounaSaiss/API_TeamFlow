@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{base_url}}/workspaces"
+method: POST
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"RH\",\r
+
+    \  \"description\": \"this workspaces Dédie Pour le département de RH \"\r
+
+    }"
+examples: ./.resources/create Workspace.resources/examples
+order: 5000

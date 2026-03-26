@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{base_url}}/projects/2/tasks"
+method: POST
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: json
+  content: "{\r
+
+    \    \"titre\" :\"tache1\",\r
+
+    \    \"priorité\":1,\r
+
+    \    \"deadline\" :\"2026-03-27\",\r
+
+    \    \"responsable_id\":1\r
+
+    }"
+examples: ./.resources/Add Taches.resources/examples
+order: 13000

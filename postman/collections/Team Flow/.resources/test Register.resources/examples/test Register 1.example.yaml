@@ -1,0 +1,45 @@
+$kind: http-example
+name: test Register
+request:
+  url: "{{base_url}}/register"
+  method: POST
+  headers:
+    Accept: application/json
+  body:
+    type: json
+    content: "{\r
+
+      \  \"name\": \"ilham\",\r
+
+      \  \"email\": \"ilham@test.com\",\r
+
+      \  \"password\": \"ilham@test.com\",\r
+
+      \  \"password_confirmation\": \"ilham@test.com\"\r
+
+      }"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Host: 127.0.0.1:8000
+    Connection: close
+    X-Powered-By: PHP/8.2.29
+    Cache-Control: no-cache, private
+    Date: Thu, 26 Mar 2026 13:24:38 GMT
+    Content-Type: application/json
+    Access-Control-Allow-Origin: "*"
+  body:
+    type: text
+    content: |-
+      {
+          "message": "User created successfully",
+          "user": {
+              "name": "ilham",
+              "email": "ilham@test.com",
+              "updated_at": "2026-03-26T13:24:38.000000Z",
+              "created_at": "2026-03-26T13:24:38.000000Z",
+              "id": 2
+          }
+      }
+order: 2000

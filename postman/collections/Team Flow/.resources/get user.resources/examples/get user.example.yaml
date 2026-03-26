@@ -1,0 +1,30 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/user"
+  method: GET
+  headers:
+    Accept: application/json
+    Authorization: Bearer {{token}}
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Host: 127.0.0.1:8000
+    Connection: close
+    X-Powered-By: PHP/8.2.29
+    Cache-Control: no-cache, private
+    Date: Tue, 24 Mar 2026 14:11:33 GMT
+    Content-Type: application/json
+    Access-Control-Allow-Origin: "*"
+  body:
+    type: text
+    content: |-
+      {
+          "id": 1,
+          "name": "mounia",
+          "email": "mounia@test.com",
+          "email_verified_at": null,
+          "created_at": "2026-03-24T13:16:18.000000Z",
+          "updated_at": "2026-03-24T13:16:18.000000Z"
+      }
+order: 1000

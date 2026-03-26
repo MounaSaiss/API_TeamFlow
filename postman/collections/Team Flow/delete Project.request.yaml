@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{base_url}}/projects/1"
+method: DELETE
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+examples: ./.resources/delete Project.resources/examples
+order: 12000

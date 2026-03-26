@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{base_url}}/workspaces/1/projects"
+method: POST
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: json
+  content: "{\r\n    \"name\": \"Project1\"\r\n}"
+examples: ./.resources/Add project to workspace.resources/examples
+order: 10000

@@ -1,0 +1,42 @@
+$kind: http-example
+name: create Workspace
+request:
+  url: "{{base_url}}/workspaces"
+  method: POST
+  headers:
+    Accept: application/json
+    Authorization: Bearer {{token}}
+  body:
+    type: json
+    content: "{\r
+
+      \  \"name\": \"RH\",\r
+
+      \  \"description\": \"this workspaces Dédie Pour le département de RH \"\r
+
+      }"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Host: 127.0.0.1:8000
+    Connection: close
+    X-Powered-By: PHP/8.2.29
+    Cache-Control: no-cache, private
+    Date: Thu, 26 Mar 2026 09:02:26 GMT
+    Content-Type: application/json
+    Access-Control-Allow-Origin: "*"
+  body:
+    type: text
+    content: |-
+      {
+          "message": "Workspace created successfully",
+          "workspace": {
+              "name": "RH",
+              "description": "this workspaces Dédie Pour le département de RH",
+              "updated_at": "2026-03-26T09:02:26.000000Z",
+              "created_at": "2026-03-26T09:02:26.000000Z",
+              "id": 2
+          }
+      }
+order: 2000

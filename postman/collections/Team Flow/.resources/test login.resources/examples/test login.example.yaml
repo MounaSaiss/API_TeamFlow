@@ -1,0 +1,33 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/login"
+  method: POST
+  headers:
+    Accept: application/json
+  body:
+    type: json
+    content: "{\r
+
+      \  \"email\": \"mounia@test.com\",\r
+
+      \  \"password\": \"mounia\"\r
+
+      }"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Host: 127.0.0.1:8000
+    Connection: close
+    X-Powered-By: PHP/8.2.29
+    Cache-Control: no-cache, private
+    Date: Tue, 24 Mar 2026 13:25:34 GMT
+    Content-Type: application/json
+    Access-Control-Allow-Origin: "*"
+  body:
+    type: text
+    content: |-
+      {
+          "access_token": "2|urfoFBd7CCE947fHGzFaln620noauLOplHLQoDguf9b30960"
+      }
+order: 1000

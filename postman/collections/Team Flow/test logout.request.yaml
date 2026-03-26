@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{base_url}}/logout"
+method: POST
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: text
+  content: "{\r
+
+    \  \"email\": \"mounia@test.com\",\r
+
+    \  \"password\": \"mounia\"\r
+
+    }"
+examples: ./.resources/test logout.resources/examples
+order: 4000

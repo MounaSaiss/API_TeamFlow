@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{base_url}}/workspaces"
+method: GET
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+examples: ./.resources/get Workspace.resources/examples
+order: 6000

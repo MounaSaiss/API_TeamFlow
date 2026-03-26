@@ -1,0 +1,17 @@
+$kind: http-request
+url: "{{base_url}}/workspaces/1"
+method: DELETE
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"IA\",\r
+
+    \  \"description\": \"this workspaces Dédie Pour le département de IA \"\r
+
+    }"
+examples: ./.resources/delete workspace.resources/examples
+order: 8000

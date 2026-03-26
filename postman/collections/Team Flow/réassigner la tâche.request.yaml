@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{base_url}}/tasks/1"
+method: PUT
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: json
+  content: "{\r\n    \"responsable_id\":2\r\n}"
+examples: ./.resources/réassigner la tâche.resources/examples
+order: 14000

@@ -1,0 +1,47 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/projects/2/tasks"
+  method: POST
+  headers:
+    Accept: application/json
+    Authorization: Bearer {{token}}
+  body:
+    type: json
+    content: "{\r
+
+      \    \"titre\" :\"tache1\",\r
+
+      \    \"priorité\":1,\r
+
+      \    \"deadline\" :\"2026-03-27\",\r
+
+      \    \"responsable_id\":1\r
+
+      }"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Host: 127.0.0.1:8000
+    Connection: close
+    X-Powered-By: PHP/8.2.29
+    Cache-Control: no-cache, private
+    Date: Thu, 26 Mar 2026 14:50:18 GMT
+    Content-Type: application/json
+    Access-Control-Allow-Origin: "*"
+  body:
+    type: text
+    content: |-
+      {
+          "message": "Tache created successfully",
+          "tache": {
+              "titre": "tache1",
+              "priorité": 1,
+              "deadline": "2026-03-27",
+              "responsable_id": 1,
+              "updated_at": "2026-03-26T14:50:18.000000Z",
+              "created_at": "2026-03-26T14:50:18.000000Z",
+              "id": 1
+          }
+      }
+order: 1000
