@@ -11,11 +11,12 @@ use App\Models\User;
 
 class AuthenticationController extends Controller
 {
-    public function register(Request $request){
+    public function register(Request $request)
+    {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed|min:6',
         ]);
 
         $user = User::create([
@@ -25,10 +26,12 @@ class AuthenticationController extends Controller
         ]);
 
         return response()->json([
-            'message' => 'User registered successfully',
+            'message' => 'User created successfully',
+            'user' => $user
         ]);
     }
-    public function login(Request $request){
+    public function login(Request $request)
+    {
         $request->validate([
             'email' => 'required|string|email',
             'password' => 'required|string',
@@ -50,12 +53,14 @@ class AuthenticationController extends Controller
             'access_token' => $token,
         ]);
     }
-    public function userInfo(Request $request){
+    public function userInfo(Request $request)
+    {
         return response()->json([
             'user' => $request->user(),
         ]);
     }
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         $request->user()->currentAccessToken()->delete();
 
         return response()->json([
