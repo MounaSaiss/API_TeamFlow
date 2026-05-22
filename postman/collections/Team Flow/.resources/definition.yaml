@@ -1,4 +1,5 @@
 $kind: collection
+name: Team Flow
 variables:
   base_url: ""
   token: ""

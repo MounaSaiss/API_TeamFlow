@@ -25,7 +25,7 @@ class ProjectController extends Controller
     }
     public function show($id)
     {
-        $project = Project::find($id);
+        $project = Project::findOrFail($id);
         return response()->json([
             'message' => 'Project dtetails récupérés avec succès',
             'project' => $project
